@@ -15,12 +15,12 @@ Route::get('/projects/educator', function () {
     return view('projects.educator');
 });
 
-Route::get('/projects/iame', function () {
-    return view('projects.iame');
-});
-
 Route::get('/projects/parambadan', function () {
     return view('projects.parambadan');
+});
+
+Route::get('/projects/managetrans', function () {
+    return view('projects.managetrans');
 });
 
 Route::get('/projects/zeacut', function () {

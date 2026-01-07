@@ -71,7 +71,7 @@
                         <a href="#experience" class="text-sm lg:text-base hover:text-blue-600 transition">Experience</a>
                         <a href="#projects" class="text-sm lg:text-base hover:text-blue-600 transition">Projects</a>
                         <a href="#contact" class="text-sm lg:text-base hover:text-blue-600 transition">Contact</a>
-                        <a href="{{ asset('storage/mohammed Rabil CV 2.pdf') }}" download="Mohammed-Rabil-CV.pdf" class="px-3 lg:px-4 py-1.5 lg:py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg hover:shadow-lg transition flex items-center space-x-2 text-sm lg:text-base">
+                        <a href="{{ asset('storage/Rabil Resume.pdf') }}" download="Mohammed-Rabil-CV.pdf" class="px-3 lg:px-4 py-1.5 lg:py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg hover:shadow-lg transition flex items-center space-x-2 text-sm lg:text-base">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                             </svg>
@@ -94,7 +94,7 @@
                     <a href="#experience" class="block py-2 hover:text-blue-600 transition text-sm sm:text-base">Experience</a>
                     <a href="#projects" class="block py-2 hover:text-blue-600 transition text-sm sm:text-base">Projects</a>
                     <a href="#contact" class="block py-2 hover:text-blue-600 transition text-sm sm:text-base">Contact</a>
-                    <a href="{{ asset('storage/mohammed Rabil CV 2.pdf') }}" download="Mohammed-Rabil-CV.pdf" class="block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-center hover:shadow-lg transition flex items-center justify-center space-x-2 text-sm sm:text-base">
+                    <a href="{{ asset('storage/Rabil Resume.pdf') }}" download="Mohammed-Rabil-CV.pdf" class="block px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-center hover:shadow-lg transition flex items-center justify-center space-x-2 text-sm sm:text-base">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                         </svg>
@@ -132,7 +132,7 @@
                         <a href="#projects" class="w-full sm:w-auto px-6 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition text-center">
                             View Projects
                         </a>
-                        <a href="{{ asset('storage/mohammed Rabil CV 2.pdf') }}" download="Mohammed-Rabil-CV.pdf" class="w-full sm:w-auto px-6 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition flex items-center justify-center space-x-2">
+                        <a href="{{ asset('storage/Rabil Resume.pdf') }}" download="Mohammed-Rabil-CV.pdf" class="w-full sm:w-auto px-6 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition flex items-center justify-center space-x-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                             </svg>
@@ -401,29 +401,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 3: IAME -->
-                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
-                        <div class="h-40 sm:h-48 bg-gradient-to-br from-green-400 to-teal-500 flex items-center justify-center">
-                            <div class="text-white text-4xl sm:text-6xl font-bold">IAME</div>
-                        </div>
-                        <div class="p-4 sm:p-6">
-                            <h3 class="text-xl sm:text-2xl font-bold mb-2">IAME</h3>
-                            <p class="text-xs sm:text-sm text-blue-600 dark:text-blue-400 mb-2 sm:mb-3">ERP - Bookstore Management</p>
-                            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-4">
-                                Role-based system for managing book inventory, order processing, and dispatch workflows with real-time updates.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
-                                <span class="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-full">PHP</span>
-                                <span class="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-full">Laravel</span>
-                                <span class="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-full">MySQL</span>
-                            </div>
-                            <a href="/projects/iame" class="block w-full text-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition text-sm sm:text-base">
-                                View Details
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: Parambadan -->
+                    <!-- Project 3: Parambadan -->
                     <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
                         <div class="h-40 sm:h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
                             <div class="text-white text-3xl sm:text-5xl font-bold">PARAM</div>
@@ -440,6 +418,29 @@
                                 <span class="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-full">RBAC</span>
                             </div>
                             <a href="/projects/parambadan" class="block w-full text-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition text-sm sm:text-base">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: ManageTrans -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-2">
+                        <div class="h-40 sm:h-48 bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center">
+                            <div class="text-white text-3xl sm:text-5xl font-bold text-center px-2">TMS</div>
+                        </div>
+                        <div class="p-4 sm:p-6">
+                            <h3 class="text-xl sm:text-2xl font-bold mb-2">ManageTrans</h3>
+                            <p class="text-xs sm:text-sm text-blue-600 dark:text-blue-400 mb-2 sm:mb-3">TMS - Transportation Management</p>
+                            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-4">
+                                Full-stack transportation management system with real-time tracking, AWS Textract OCR, and mobile API for drivers.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-3 sm:mb-4">
+                                <span class="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-full">Laravel</span>
+                                <span class="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-full">AWS Textract</span>
+                                <span class="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-full">Firebase</span>
+                                <span class="px-2 sm:px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded-full">REST API</span>
+                            </div>
+                            <a href="/projects/managetrans" class="block w-full text-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition text-sm sm:text-base">
                                 View Details
                             </a>
                         </div>
@@ -492,9 +493,9 @@
                 
                 <div class="max-w-3xl mx-auto">
                     <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-800 p-6 sm:p-8 rounded-2xl shadow-lg">
-                        <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4">
-                            <div class="flex-shrink-0 mx-auto sm:mx-0">
-                                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mx-2.5">
+                        <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
                                     <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
                                     </svg>
@@ -573,7 +574,7 @@
                             </div>
                             
                             <div class="mt-4 sm:mt-6">
-                                <a href="{{ asset('storage/mohammed Rabil CV 2.pdf') }}" download="Mohammed-Rabil-CV.pdf" class="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition text-sm sm:text-base">
+                                <a href="{{ asset('storage/Rabil Resume.pdf') }}" download="Mohammed-Rabil-CV.pdf" class="inline-flex items-center space-x-2 px-4 sm:px-6 py-2 sm:py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition text-sm sm:text-base">
                                     <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                                     </svg>
