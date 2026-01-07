@@ -105,7 +105,7 @@
         </nav>
 
         <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center pt-16 sm:pt-20 bg-white dark:bg-gray-900">
+        <section id="home" class="min-h-screen flex items-center justify-center pt-16 sm:pt-20 bg-white dark:bg-gray-900 scroll-mt-16 sm:scroll-mt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
                 <div class="text-center">
                     <div class="mb-6 sm:mb-8 inline-block">
@@ -155,7 +155,7 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-12 sm:py-20 bg-white dark:bg-gray-800">
+        <section id="about" class="py-12 sm:py-20 bg-white dark:bg-gray-800 scroll-mt-16 sm:scroll-mt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12">
                     About
@@ -202,7 +202,7 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="py-12 sm:py-20 bg-gray-50 dark:bg-gray-900">
+        <section id="skills" class="py-12 sm:py-20 bg-gray-50 dark:bg-gray-900 scroll-mt-16 sm:scroll-mt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12">
                     My Skills
@@ -220,7 +220,6 @@
                             <span class="px-2 sm:px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-xs sm:text-sm">Laravel</span>
                             <span class="px-2 sm:px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-xs sm:text-sm">Codeigniter</span>
                             <span class="px-2 sm:px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-xs sm:text-sm">SQL</span>
-                            <span class="px-2 sm:px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-xs sm:text-sm">API Integration</span>
                         </div>
                     </div>
 
@@ -263,7 +262,7 @@
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-12 sm:py-20 bg-white dark:bg-gray-800">
+        <section id="experience" class="py-12 sm:py-20 bg-white dark:bg-gray-800 scroll-mt-16 sm:scroll-mt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12">
                     Experience
@@ -277,9 +276,9 @@
                     <div class="mb-8 sm:mb-12 flex flex-col md:flex-row items-center">
                         <div class="md:w-1/2 md:pr-12 mb-4 md:mb-0 md:text-right w-full">
                             <div class="bg-gradient-to-br from-blue-500 to-blue-600 inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-white text-xs sm:text-sm font-semibold mb-3 sm:mb-4">
-                                05/2025 - Present
+                                05/2025 - 11/2025
                             </div>
-                            <h3 class="text-xl sm:text-2xl font-bold mb-2">Laravel Developer</h3>
+                            <h3 class="text-xl sm:text-2xl font-bold mb-2">Junior Software Engineer</h3>
                             <p class="text-base sm:text-lg text-blue-600 dark:text-blue-400 mb-2">
                                 <a href="https://zilmoney.com" target="_blank" class="hover:underline">Zil Money</a> | Manjeri
                             </p>
@@ -287,17 +286,23 @@
                                 Product-Based Company • Fintech Payment Operations Platform • $100B+ Processed • 1M+ Businesses • 22K+ Bank Integrations
                             </p>
                             <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-3 sm:mb-4">
-                                Building a complete payment operations platform supporting ACH, wire transfers, digital checks, international payments, bulk processing, payment automation, and API integrations for enterprise clients.
+                                Built a complete payment operations platform supporting ACH, wire transfers, digital checks, international payments, bulk processing, payment automation, and API integrations for enterprise clients.
                             </p>
-                            <ul class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-1.5 sm:space-y-2">
-                                <li>✓ Developing payment operations platform processing billions in transactions</li>
-                                <li>✓ Building APIs for ACH, wire transfers, checks, and international payments</li>
-                                <li>✓ Implementing payment automation and bulk processing features</li>
-                                <li>✓ Integrating AWS Textract for intelligent document processing</li>
-                                <li>✓ Leveraging OpenAI models for payment validation and automation</li>
-                                <li>✓ Using Cursor IDE for AI-assisted development workflows</li>
-                                <li>✓ Working with Agile methodologies and Jira for project management</li>
+                            <ul class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
+                                <li>✓ Developed payment operations platform processing billions in transactions</li>
+                                <li>✓ Built APIs for ACH, wire transfers, checks, and international payments</li>
+                                <li>✓ Implemented payment automation and bulk processing features</li>
+                                <li>✓ Integrated AWS Textract for intelligent document processing</li>
+                                <li>✓ Leveraged OpenAI models for payment validation and automation</li>
+                                <li>✓ Used Cursor IDE for AI-assisted development workflows</li>
+                                <li>✓ Worked with Agile methodologies and Jira for project management</li>
                             </ul>
+                            <a href="{{ asset('storage/Zil Money - Service Letter - Mohammed Rabil.pdf') }}" target="_blank" class="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/50 transition text-xs sm:text-sm font-medium">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                <span>View Service Certificate</span>
+                            </a>
                         </div>
                         <div class="hidden md:block w-8 h-8 bg-blue-600 rounded-full border-4 border-white dark:border-gray-800 z-10"></div>
                         <div class="md:w-1/2 md:pl-12"></div>
@@ -321,7 +326,7 @@
                             <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-3 sm:mb-4">
                                 Developed next-generation EdTech solutions and enterprise software for educational institutions, providing comprehensive learning management systems and business automation platforms.
                             </p>
-                            <ul class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-1.5 sm:space-y-2">
+                            <ul class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 space-y-1.5 sm:space-y-2 mb-3 sm:mb-4">
                                 <li>✓ Built custom LMS platforms with live classes, video tutorials, and online exams</li>
                                 <li>✓ Developed CRM and ERP solutions for educational institutions</li>
                                 <li>✓ Integrated payment gateways, Zoom SDK, and push notification services</li>
@@ -329,6 +334,12 @@
                                 <li>✓ Interfaced directly with clients to gather requirements and design solutions</li>
                                 <li>✓ Maintained high-performance web applications serving 2M+ users</li>
                             </ul>
+                            <a href="{{ asset('storage/trogon.pdf') }}" target="_blank" class="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-900/50 transition text-xs sm:text-sm font-medium">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                </svg>
+                                <span>View Service Certificate</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -336,7 +347,7 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-12 sm:py-20 bg-gray-50 dark:bg-gray-900">
+        <section id="projects" class="py-12 sm:py-20 bg-gray-50 dark:bg-gray-900 scroll-mt-16 sm:scroll-mt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12">
                     Portfolio
@@ -473,7 +484,7 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" class="py-12 sm:py-20 bg-white dark:bg-gray-800">
+        <section id="education" class="py-12 sm:py-20 bg-white dark:bg-gray-800 scroll-mt-16 sm:scroll-mt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12">
                     Education
@@ -483,17 +494,28 @@
                     <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-700 dark:to-gray-800 p-6 sm:p-8 rounded-2xl shadow-lg">
                         <div class="flex flex-col sm:flex-row items-start space-y-4 sm:space-y-0 sm:space-x-4">
                             <div class="flex-shrink-0 mx-auto sm:mx-0">
-                                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path></svg>
+                                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mx-2.5">
+                                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+                                    </svg>
                                 </div>
                             </div>
                             <div class="flex-1 text-center sm:text-left">
                                 <h3 class="text-xl sm:text-2xl font-bold mb-2">Bachelor of Science in Computer Science</h3>
                                 <p class="text-base sm:text-lg text-blue-600 dark:text-blue-400 mb-2">University of Calicut</p>
-                                <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-3 sm:mb-4">2020 - 2023</p>
-                                <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300">
-                                    Completed comprehensive computer science program with focus on software development, algorithms, and database management.
+                                <p class="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-2">2020 - 2024 (Completed in November 2024)</p>
+                                <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-500 mb-2 italic">
+                                    First Class • Overall Grade: B • Complementary Courses: Mathematics & Statistics
                                 </p>
+                                <p class="text-sm sm:text-base text-gray-700 dark:text-gray-300 mb-3 sm:mb-4">
+                                    Completed comprehensive computer science program with focus on software development, algorithms, and database management. Graduated with First Class honors.
+                                </p>
+                                <a href="{{ asset('storage/RABIL CRTFCT.pdf') }}" target="_blank" class="inline-flex items-center space-x-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/50 transition text-xs sm:text-sm font-medium">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span>View Degree Certificate</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -502,7 +524,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-12 sm:py-20 bg-gray-50 dark:bg-gray-900">
+        <section id="contact" class="py-12 sm:py-20 bg-gray-50 dark:bg-gray-900 scroll-mt-16 sm:scroll-mt-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12">
                     Contact
