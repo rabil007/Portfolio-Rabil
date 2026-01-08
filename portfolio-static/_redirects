@@ -1,0 +1,2 @@
+# Netlify Redirects
+/projects/*  /projects/:splat.html  200
