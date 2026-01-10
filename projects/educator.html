@@ -56,10 +56,6 @@
         .role-title { font-weight: 600; color: var(--text); margin-bottom: 8px; }
         .role-company { color: var(--accent); font-size: 0.9rem; margin-bottom: 12px; }
         .role-description { color: var(--text-muted); font-size: 0.95rem; }
-        .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; }
-        .stat-item { text-align: center; padding: 20px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; }
-        .stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); }
-        .stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
         .visit-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent-secondary)); color: white; text-decoration: none; border-radius: 12px; font-weight: 500; transition: all 0.3s; box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3); }
         .visit-link:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4); }
         .visit-link svg { width: 18px; height: 18px; }
@@ -67,7 +63,6 @@
             .container { padding: 40px 16px 80px; }
             .project-title { font-size: 2rem; }
             .project-icon { width: 80px; height: 80px; font-size: 1.3rem; }
-            .stats-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -94,21 +89,6 @@
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 Visit Website
             </a>
-        </div>
-
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">2M+</div>
-                <div class="stat-label">Active Users</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Institutions</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">10K+</div>
-                <div class="stat-label">Live Classes</div>
-            </div>
         </div>
 
         <div class="section" style="margin-top: 48px;">
