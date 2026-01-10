@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEXUS - ERP Customer Management | Mohammed Rabil T</title>
-    <meta name="description" content="NEXUS - Automated Gold Rate Update System with role-based access control and secure token authentication.">
+    <title>DaintyHand - E-commerce Platform | Mohammed Rabil T</title>
+    <meta name="description" content="DaintyHand - Full-stack e-commerce platform for handmade crafts with React, TypeScript, and Laravel backend.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -16,8 +16,8 @@
             --card-border: rgba(255, 255, 255, 0.05);
             --text: #e4e4e7;
             --text-muted: #71717a;
-            --accent: #f59e0b;
-            --accent-secondary: #ea580c;
+            --accent: #ec4899;
+            --accent-secondary: #a855f7;
         }
         html { scroll-behavior: smooth; }
         body {
@@ -31,14 +31,14 @@
         .star { position: absolute; background: white; border-radius: 50%; animation: twinkle linear infinite; }
         @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
         .blob { position: fixed; border-radius: 50%; filter: blur(120px); opacity: 0.4; z-index: 0; pointer-events: none; }
-        .blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(245, 158, 11, 0.3), transparent 60%); top: -200px; right: -100px; }
-        .blob-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(234, 88, 12, 0.25), transparent 60%); bottom: -150px; left: -100px; }
+        .blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(236, 72, 153, 0.3), transparent 60%); top: -200px; right: -100px; }
+        .blob-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(168, 85, 247, 0.25), transparent 60%); bottom: -150px; left: -100px; }
         .container { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 60px 24px 100px; }
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 40px; transition: color 0.3s; }
         .back-link:hover { color: var(--text); }
         .back-link svg { width: 20px; height: 20px; }
         .project-header { text-align: center; margin-bottom: 48px; }
-        .project-icon { width: 100px; height: 100px; border-radius: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; color: white; background: linear-gradient(135deg, var(--accent), var(--accent-secondary)); box-shadow: 0 20px 60px rgba(245, 158, 11, 0.3); }
+        .project-icon { width: 100px; height: 100px; border-radius: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; font-weight: 700; color: white; background: linear-gradient(135deg, var(--accent), var(--accent-secondary)); box-shadow: 0 20px 60px rgba(236, 72, 153, 0.3); }
         .project-title { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 12px; }
         .project-type { color: var(--accent); font-size: 1.1rem; font-weight: 500; margin-bottom: 20px; }
         .project-description { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.8; }
@@ -51,18 +51,18 @@
         .feature-list li:last-child { border-bottom: none; }
         .feature-list li::before { content: '✓'; color: var(--accent); font-weight: 600; }
         .tech-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-        .tech-tag { padding: 8px 16px; background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3); border-radius: 999px; font-size: 0.9rem; color: var(--accent); }
-        .role-card { background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(234, 88, 12, 0.05)); border: 1px solid rgba(245, 158, 11, 0.2); }
+        .tech-tag { padding: 8px 16px; background: rgba(236, 72, 153, 0.1); border: 1px solid rgba(236, 72, 153, 0.3); border-radius: 999px; font-size: 0.9rem; color: var(--accent); }
+        .role-card { background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(168, 85, 247, 0.05)); border: 1px solid rgba(236, 72, 153, 0.2); }
         .role-title { font-weight: 600; color: var(--text); margin-bottom: 8px; }
         .role-company { color: var(--accent); font-size: 0.9rem; margin-bottom: 12px; }
         .role-description { color: var(--text-muted); font-size: 0.95rem; }
-        .visit-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent-secondary)); color: white; text-decoration: none; border-radius: 12px; font-weight: 500; transition: all 0.3s; box-shadow: 0 10px 30px rgba(245, 158, 11, 0.3); }
-        .visit-link:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(245, 158, 11, 0.4); }
+        .visit-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent-secondary)); color: white; text-decoration: none; border-radius: 12px; font-weight: 500; transition: all 0.3s; box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3); }
+        .visit-link:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(236, 72, 153, 0.4); }
         .visit-link svg { width: 18px; height: 18px; }
         @media (max-width: 640px) {
             .container { padding: 40px 16px 80px; }
             .project-title { font-size: 2rem; }
-            .project-icon { width: 80px; height: 80px; font-size: 1.5rem; }
+            .project-icon { width: 80px; height: 80px; font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -78,14 +78,14 @@
         </a>
 
         <div class="project-header">
-            <div class="project-icon">NEXUS</div>
-            <h1 class="project-title">NEXUS</h1>
-            <p class="project-type">ERP · Customer Management System</p>
+            <div class="project-icon">DH</div>
+            <h1 class="project-title">DaintyHand</h1>
+            <p class="project-type">E-Commerce · Handmade Crafts Platform</p>
             <p class="project-description">
-                A comprehensive ERP solution designed for jewellery businesses, featuring automated gold rate updates, 
-                customer management, and secure API integrations with role-based access control.
+                Full-stack e-commerce platform for handmade crafts. Built with React, TypeScript, and a Laravel backend. 
+                Features product browsing, shopping cart, wishlist, custom orders, and user authentication.
             </p>
-            <a href="https://nexusgoldanddiamonds.ae/" target="_blank" rel="noopener noreferrer" class="visit-link">
+            <a href="https://daintyhand.softspiretechnologies.com/" target="_blank" rel="noopener noreferrer" class="visit-link">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 Visit Website
             </a>
@@ -95,13 +95,18 @@
             <h2 class="section-title"><span>⚡</span> Key Features</h2>
             <div class="card">
                 <ul class="feature-list">
-                    <li>Automated Gold Rate Update System with real-time price synchronization</li>
-                    <li>Role-based access control (RBAC) for multi-level user permissions</li>
-                    <li>Secure token authentication using Firebase JWT</li>
-                    <li>RESTful API architecture for seamless integrations</li>
-                    <li>Customer relationship management with transaction history</li>
-                    <li>Inventory management with stock tracking</li>
-                    <li>Comprehensive reporting and analytics dashboard</li>
+                    <li>Product catalog with category filtering and search functionality</li>
+                    <li>Shopping cart with persistent storage (localStorage/API)</li>
+                    <li>Wishlist functionality for saved items</li>
+                    <li>User authentication (register, login, profile management)</li>
+                    <li>Custom order requests with form validation</li>
+                    <li>Contact form with validation</li>
+                    <li>Order management and history tracking</li>
+                    <li>Responsive design with mobile navigation</li>
+                    <li>Product carousel and testimonials</li>
+                    <li>Checkout process with shipping details</li>
+                    <li>Guest cart/wishlist with session management</li>
+                    <li>Cart merging on authentication</li>
                 </ul>
             </div>
         </div>
@@ -109,11 +114,14 @@
         <div class="section">
             <h2 class="section-title"><span>👨‍💻</span> My Role</h2>
             <div class="card role-card">
-                <p class="role-title">Backend Developer</p>
+                <p class="role-title">Full-Stack Developer</p>
                 <p class="role-description">
-                    Led the backend development of the NEXUS ERP system. Designed and implemented the automated gold rate 
-                    update mechanism, built secure REST APIs with JWT authentication, and developed the role-based access 
-                    control system to manage different user permission levels across the platform.
+                    Developed a full-stack e-commerce platform using React 18.3.1 with TypeScript and Laravel 10+ REST API. 
+                    Implemented type-safe component-based architecture with React Hook Form and Zod validation. Built state 
+                    management with React Query and localStorage for guest sessions. Created RESTful API integration with 
+                    Laravel Sanctum authentication, supporting both guest and authenticated users with cart merging functionality. 
+                    Designed responsive mobile-first UI with Tailwind CSS and shadcn/ui components, featuring custom color palette 
+                    and typography. Implemented SEO-friendly routing and comprehensive error handling with loading states.
                 </p>
             </div>
         </div>
@@ -121,13 +129,20 @@
         <div class="section">
             <h2 class="section-title"><span>🛠️</span> Technologies Used</h2>
             <div class="tech-grid">
-                <span class="tech-tag">PHP</span>
-                <span class="tech-tag">CodeIgniter</span>
+                <span class="tech-tag">React 18.3.1</span>
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">Vite 5.4.1</span>
+                <span class="tech-tag">React Router DOM</span>
+                <span class="tech-tag">Tailwind CSS</span>
+                <span class="tech-tag">shadcn/ui</span>
+                <span class="tech-tag">React Hook Form</span>
+                <span class="tech-tag">Zod</span>
+                <span class="tech-tag">TanStack React Query</span>
+                <span class="tech-tag">Axios</span>
+                <span class="tech-tag">Laravel 10+</span>
+                <span class="tech-tag">Laravel Sanctum</span>
                 <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">Firebase JWT</span>
                 <span class="tech-tag">REST API</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Bootstrap</span>
             </div>
         </div>
     </div>

@@ -1,36 +1,161 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ManageTrans - Transportation Management | Mohammed Rabil T</title>
-    <link rel="stylesheet" href="../assets/css/app-D4HwSnO-.css">
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800|space-grotesk:700" rel="stylesheet" />
+    <meta name="description" content="ManageTrans - Full-stack transportation management system with real-time tracking and AWS Textract OCR.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #030014;
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --text: #e4e4e7;
+            --text-muted: #71717a;
+            --accent: #6366f1;
+            --accent-secondary: #06b6d4;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+        #stars-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none; }
+        .star { position: absolute; background: white; border-radius: 50%; animation: twinkle linear infinite; }
+        @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+        .blob { position: fixed; border-radius: 50%; filter: blur(120px); opacity: 0.4; z-index: 0; pointer-events: none; }
+        .blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(99, 102, 241, 0.3), transparent 60%); top: -200px; right: -100px; }
+        .blob-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(6, 182, 212, 0.25), transparent 60%); bottom: -150px; left: -100px; }
+        .container { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 60px 24px 100px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 40px; transition: color 0.3s; }
+        .back-link:hover { color: var(--text); }
+        .back-link svg { width: 20px; height: 20px; }
+        .project-header { text-align: center; margin-bottom: 48px; }
+        .project-icon { width: 100px; height: 100px; border-radius: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-family: 'Space Grotesk', sans-serif; font-size: 1.8rem; font-weight: 700; color: white; background: linear-gradient(135deg, var(--accent), var(--accent-secondary)); box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3); }
+        .project-title { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 12px; }
+        .project-type { color: var(--accent); font-size: 1.1rem; font-weight: 500; margin-bottom: 20px; }
+        .project-description { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.8; }
+        .section { margin-bottom: 40px; }
+        .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .section-title span { font-size: 1.2rem; }
+        .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; }
+        .feature-list { list-style: none; }
+        .feature-list li { padding: 12px 0; border-bottom: 1px solid var(--card-border); color: var(--text-muted); display: flex; align-items: flex-start; gap: 12px; }
+        .feature-list li:last-child { border-bottom: none; }
+        .feature-list li::before { content: '✓'; color: var(--accent); font-weight: 600; }
+        .tech-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tech-tag { padding: 8px 16px; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.3); border-radius: 999px; font-size: 0.9rem; color: var(--accent); }
+        .role-card { background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(6, 182, 212, 0.05)); border: 1px solid rgba(99, 102, 241, 0.2); }
+        .role-title { font-weight: 600; color: var(--text); margin-bottom: 8px; }
+        .role-company { color: var(--accent); font-size: 0.9rem; margin-bottom: 12px; }
+        .role-description { color: var(--text-muted); font-size: 0.95rem; }
+        .visit-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent-secondary)); color: white; text-decoration: none; border-radius: 12px; font-weight: 500; transition: all 0.3s; box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3); }
+        .visit-link:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(99, 102, 241, 0.4); }
+        .visit-link svg { width: 18px; height: 18px; }
+        @media (max-width: 640px) {
+            .container { padding: 40px 16px 80px; }
+            .project-title { font-size: 2rem; }
+            .project-icon { width: 80px; height: 80px; font-size: 1.5rem; }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-    <div class="min-h-screen flex items-center justify-center px-4">
-        <div class="max-w-2xl mx-auto text-center">
-            <div class="mb-8">
-                <div class="w-24 h-24 bg-gradient-to-br from-indigo-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <span class="text-white text-3xl font-bold">TMS</span>
-                </div>
-                <h1 class="text-4xl font-bold mb-4">ManageTrans</h1>
-                <p class="text-xl text-blue-600 dark:text-blue-400 mb-4">TMS - Transportation Management</p>
-                <p class="text-gray-600 dark:text-gray-400 mb-6">
-                    Full-stack transportation management system with real-time tracking, AWS Textract OCR, and mobile API for drivers.
-                </p>
-                <div class="flex flex-wrap gap-2 justify-center mb-8">
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded-full">Laravel</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded-full">AWS Textract</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded-full">Firebase</span>
-                    <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-sm rounded-full">REST API</span>
-                </div>
-            </div>
-            <a href="../index.html#projects" class="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">
-                ← Back to Portfolio
+<body>
+    <div id="stars-container"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="container">
+        <a href="../index.html#projects" class="back-link">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            Back to Portfolio
+        </a>
+
+        <div class="project-header">
+            <div class="project-icon">TMS</div>
+            <h1 class="project-title">ManageTrans</h1>
+            <p class="project-type">TMS · Transportation Management System</p>
+            <p class="project-description">
+                Full-stack web application for managing transportation operations, including drivers, vessels, trips, expenses, 
+                and real-time tracking. Includes a web admin panel and a mobile API for drivers.
+            </p>
+            <a href="https://manage-trans.com/" target="_blank" rel="noopener noreferrer" class="visit-link">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                Visit Website
             </a>
         </div>
+
+        <div class="section">
+            <h2 class="section-title"><span>⚡</span> Key Features</h2>
+            <div class="card">
+                <ul class="feature-list">
+                    <li>Real-time GPS tracking for fleet and driver management</li>
+                    <li>AWS Textract OCR for automated document processing and data extraction</li>
+                    <li>Firebase push notifications for real-time driver alerts</li>
+                    <li>RESTful mobile API with Laravel Sanctum authentication</li>
+                    <li>Comprehensive trip management with planning, assignment, and status tracking</li>
+                    <li>Role-based access control with granular permissions</li>
+                    <li>Advanced reporting and analytics with filtering capabilities</li>
+                    <li>Activity logging and audit trail system</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span>👨‍💻</span> My Role</h2>
+            <div class="card role-card">
+                <p class="role-title">Full-Stack Developer</p>
+                <p class="role-description">
+                    Developed a full-stack transportation management system using Laravel 12 and PHP 8.2, featuring real-time 
+                    driver tracking, AWS Textract OCR integration, Firebase push notifications, and role-based access control. 
+                    Built RESTful APIs for mobile integration, implemented a custom permission system with trait-based architecture, 
+                    and created comprehensive reporting with advanced filtering. Designed 20+ controllers, 17+ models with relationships, 
+                    and 39+ database migrations following MVC with Service Layer pattern.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span>🛠️</span> Technologies Used</h2>
+            <div class="tech-grid">
+                <span class="tech-tag">Laravel 12</span>
+                <span class="tech-tag">PHP 8.2+</span>
+                <span class="tech-tag">AWS Textract</span>
+                <span class="tech-tag">Firebase FCM</span>
+                <span class="tech-tag">Laravel Sanctum</span>
+                <span class="tech-tag">SQLite/MySQL</span>
+                <span class="tech-tag">REST API</span>
+                <span class="tech-tag">Tailwind CSS 4.0</span>
+                <span class="tech-tag">Vite</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Bootstrap</span>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function createStars() {
+            const container = document.getElementById('stars-container');
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 2 + 0.5;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                container.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
 </body>
 </html>
