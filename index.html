@@ -34,36 +34,6 @@
             --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
-        /* Light Mode */
-        [data-theme="light"] {
-            --bg: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --card-bg: rgba(0, 0, 0, 0.02);
-            --card-bg-hover: rgba(0, 0, 0, 0.05);
-            --card-border: rgba(0, 0, 0, 0.08);
-            --card-border-hover: rgba(139, 92, 246, 0.4);
-            --text: #1f2937;
-            --text-muted: #6b7280;
-            --text-bright: #111827;
-            --accent: #8b5cf6;
-            --accent-blue: #3b82f6;
-            --accent-pink: #ec4899;
-        }
-
-        [data-theme="light"] .blob {
-            opacity: 0.15;
-        }
-
-        [data-theme="light"] .grid-overlay {
-            background-image: 
-                linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
-        }
-
-        [data-theme="light"] .star {
-            background: #333;
-            opacity: 0.1;
-        }
 
         html {
             scroll-behavior: smooth;
@@ -928,68 +898,6 @@
             margin: 0 6px;
         }
 
-        /* ========== THEME TOGGLE ========== */
-        .theme-toggle {
-            position: fixed;
-            top: 28px;
-            right: 28px;
-            z-index: 100;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(10, 10, 20, 0.85);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 
-                0 10px 30px rgba(0, 0, 0, 0.3),
-                0 0 20px rgba(168, 85, 247, 0.1);
-        }
-
-        [data-theme="light"] .theme-toggle {
-            background: rgba(255, 255, 255, 0.85);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            box-shadow: 
-                0 10px 30px rgba(0, 0, 0, 0.1),
-                0 0 20px rgba(168, 85, 247, 0.05);
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.1) rotate(15deg);
-            box-shadow: 
-                0 15px 40px rgba(0, 0, 0, 0.4),
-                0 0 30px rgba(168, 85, 247, 0.2);
-        }
-
-        .theme-toggle svg {
-            width: 24px;
-            height: 24px;
-            color: var(--text);
-            transition: all 0.3s ease;
-        }
-
-        .theme-toggle .sun-icon {
-            display: none;
-        }
-
-        .theme-toggle .moon-icon {
-            display: block;
-        }
-
-        [data-theme="light"] .theme-toggle .sun-icon {
-            display: block;
-        }
-
-        [data-theme="light"] .theme-toggle .moon-icon {
-            display: none;
-        }
-
-
         /* ========== RESPONSIVE ========== */
         
         /* Tablet */
@@ -1651,16 +1559,6 @@
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
 
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <svg class="sun-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-        </svg>
-        <svg class="moon-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-        </svg>
-    </button>
-
     <!-- Main Content -->
     <div class="container">
         <!-- Hero Section -->
@@ -2076,22 +1974,6 @@
                     });
                 }
             });
-        });
-
-        // Theme Toggle
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.documentElement;
-        
-        // Check for saved theme preference or default to dark
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        html.setAttribute('data-theme', currentTheme);
-        
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
         });
 
         // Initialize
