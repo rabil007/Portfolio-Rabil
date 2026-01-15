@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant POS - Desktop Application | Mohammed Rabil T</title>
+    <meta name="description" content="Restaurant POS - Fully offline desktop Point of Sale application built with Electron, React, and SQLite.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #030014;
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --text: #e4e4e7;
+            --text-muted: #71717a;
+            --accent: #10b981;
+            --accent-secondary: #059669;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.7;
+        }
+        #stars-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; pointer-events: none; }
+        .star { position: absolute; background: white; border-radius: 50%; animation: twinkle linear infinite; }
+        @keyframes twinkle { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+        .blob { position: fixed; border-radius: 50%; filter: blur(120px); opacity: 0.4; z-index: 0; pointer-events: none; }
+        .blob-1 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(16, 185, 129, 0.3), transparent 60%); top: -200px; right: -100px; }
+        .blob-2 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(5, 150, 105, 0.25), transparent 60%); bottom: -150px; left: -100px; }
+        .container { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; padding: 60px 24px 100px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; margin-bottom: 40px; transition: color 0.3s; }
+        .back-link:hover { color: var(--text); }
+        .back-link svg { width: 20px; height: 20px; }
+        .project-header { text-align: center; margin-bottom: 48px; }
+        .project-icon { width: 100px; height: 100px; border-radius: 24px; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 700; color: white; background: linear-gradient(135deg, var(--accent), var(--accent-secondary)); box-shadow: 0 20px 60px rgba(16, 185, 129, 0.3); }
+        .project-title { font-family: 'Space Grotesk', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 12px; }
+        .project-type { color: var(--accent); font-size: 1.1rem; font-weight: 500; margin-bottom: 20px; }
+        .project-description { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.8; }
+        .section { margin-bottom: 40px; }
+        .section-title { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .section-title span { font-size: 1.2rem; }
+        .card { background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 24px; }
+        .feature-list { list-style: none; }
+        .feature-list li { padding: 12px 0; border-bottom: 1px solid var(--card-border); color: var(--text-muted); display: flex; align-items: flex-start; gap: 12px; }
+        .feature-list li:last-child { border-bottom: none; }
+        .feature-list li::before { content: '✓'; color: var(--accent); font-weight: 600; }
+        .tech-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .tech-tag { padding: 8px 16px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 999px; font-size: 0.9rem; color: var(--accent); }
+        .role-card { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.05)); border: 1px solid rgba(16, 185, 129, 0.2); }
+        .role-title { font-weight: 600; color: var(--text); margin-bottom: 8px; }
+        .role-company { color: var(--accent); font-size: 0.9rem; margin-bottom: 12px; }
+        .role-description { color: var(--text-muted); font-size: 0.95rem; }
+        .visit-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; padding: 12px 24px; background: linear-gradient(135deg, var(--accent), var(--accent-secondary)); color: white; text-decoration: none; border-radius: 12px; font-weight: 500; transition: all 0.3s; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3); }
+        .visit-link:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4); }
+        .visit-link svg { width: 18px; height: 18px; }
+        .note-box { background: rgba(16, 185, 129, 0.05); border-left: 3px solid var(--accent); padding: 16px; border-radius: 8px; margin-top: 20px; }
+        .note-box p { color: var(--text-muted); font-size: 0.9rem; margin: 0; }
+        .project-screenshot { width: 100%; max-width: 100%; border-radius: 16px; margin: 32px 0; border: 1px solid var(--card-border); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
+        @media (max-width: 640px) {
+            .container { padding: 40px 16px 80px; }
+            .project-title { font-size: 2rem; }
+            .project-icon { width: 80px; height: 80px; font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="stars-container"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="container">
+        <a href="../index.html#projects" class="back-link">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+            Back to Portfolio
+        </a>
+
+        <div class="project-header">
+            <div class="project-icon">POS</div>
+            <h1 class="project-title">Restaurant POS</h1>
+            <p class="project-type">Desktop Application · Point of Sale System</p>
+            <p class="project-description">
+                A fully offline Restaurant Point of Sale (POS) Desktop Application built with Electron, React, and SQLite. 
+                This comprehensive POS system provides complete restaurant management capabilities including order processing, 
+                inventory management, reporting, and thermal printer support.
+            </p>
+            <div class="note-box">
+                <p><strong>Note:</strong> This project was developed with the assistance of Cursor AI, leveraging its powerful 
+                code generation and refactoring capabilities to build a production-ready POS system.</p>
+            </div>
+            <img src="../assets/projects/billing-SF.png" alt="Restaurant POS Application Screenshot" class="project-screenshot">
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span>⚡</span> Key Features</h2>
+            <div class="card">
+                <h3 style="color: var(--text); margin-bottom: 16px; font-size: 1rem;">Core Functionality</h3>
+                <ul class="feature-list">
+                    <li><strong>Order Management:</strong> Multiple order types (Dine In, Take Away, Delivery, Express) with real-time cart updates, quantity management, and item modification</li>
+                    <li><strong>Menu & Inventory Management:</strong> Category-based menu organization, complete CRUD operations, stock tracking with low stock alerts, and item availability management</li>
+                    <li><strong>Billing System:</strong> Automatic subtotal calculation, configurable VAT/Tax rates, grand total calculation, and multiple payment modes tracking</li>
+                    <li><strong>Work Period Management:</strong> Clock in/out functionality, work period tracking, and session management</li>
+                    <li><strong>Reports & Analytics:</strong> Daily sales reports with date filtering, tax reports with detailed breakdown, summary statistics, and export capabilities</li>
+                    <li><strong>KOT (Kitchen Order Ticket) Display:</strong> Real-time order display and kitchen order management</li>
+                </ul>
+                
+                <h3 style="color: var(--text); margin: 24px 0 16px; font-size: 1rem;">Advanced Features</h3>
+                <ul class="feature-list">
+                    <li><strong>Thermal Printer Support:</strong> ESC/POS printer integration, bill receipt printing, KOT printing, and USB printer support</li>
+                    <li><strong>User Management:</strong> Multi-user support with role-based permissions, user authentication system, and permission-based access control</li>
+                    <li><strong>Settings Management:</strong> Configurable tax rates, printer settings, currency settings, and application preferences</li>
+                    <li><strong>Data Management:</strong> Automatic daily database backups, manual backup/restore functionality, data recovery mechanisms, and window state persistence</li>
+                    <li><strong>Internationalization:</strong> Multi-language support (English/Arabic) with language switching capability</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span>👨‍💻</span> My Role</h2>
+            <div class="card role-card">
+                <p class="role-title">Full-Stack Developer</p>
+                <p class="role-description">
+                    Developed a complete offline-first desktop POS application using Electron for cross-platform desktop deployment. 
+                    Built the React-based frontend with React Router DOM for navigation and implemented SQLite database using Better-SQLite3 
+                    for high-performance local data storage. Integrated ESC/POS thermal printer support for receipt and KOT printing. 
+                    Implemented comprehensive order management, inventory tracking, billing system with configurable tax rates, and 
+                    reporting features. Developed user authentication, role-based access control, and multi-language support. 
+                    Created automatic backup system and data recovery mechanisms. Designed and built the entire application architecture 
+                    with focus on offline functionality, performance, and user experience.
+                </p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title"><span>🛠️</span> Technologies Used</h2>
+            <div class="card">
+                <h3 style="color: var(--text); margin-bottom: 12px; font-size: 0.95rem;">Frontend</h3>
+                <div class="tech-grid" style="margin-bottom: 20px;">
+                    <span class="tech-tag">React 19.2.3</span>
+                    <span class="tech-tag">React Router DOM 7.12.0</span>
+                    <span class="tech-tag">Vite 7.3.1</span>
+                </div>
+                
+                <h3 style="color: var(--text); margin-bottom: 12px; font-size: 0.95rem;">Backend/Desktop</h3>
+                <div class="tech-grid" style="margin-bottom: 20px;">
+                    <span class="tech-tag">Electron 39.2.7</span>
+                    <span class="tech-tag">Better-SQLite3 12.6.0</span>
+                    <span class="tech-tag">ESC/POS 3.0.0</span>
+                </div>
+                
+                <h3 style="color: var(--text); margin-bottom: 12px; font-size: 0.95rem;">Build Tools</h3>
+                <div class="tech-grid">
+                    <span class="tech-tag">Electron Builder 26.4.0</span>
+                    <span class="tech-tag">Concurrently</span>
+                    <span class="tech-tag">Cross-env</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createStars() {
+            const container = document.getElementById('stars-container');
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                const size = Math.random() * 2 + 0.5;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                container.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
+</body>
+</html>
